@@ -28,7 +28,7 @@ if(process.env.NODE_ENV === "development"){
         publicPath: config.output.publicPath,
     }));
 }
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static( 'public'));
 
 app.get("/", function(req, res){
     res.sendFile(__dirname + '/app/index.html');
