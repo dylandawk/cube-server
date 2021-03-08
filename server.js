@@ -1,5 +1,6 @@
 const express = require("express");
 const port = process.env.PORT || 8080;
+const path = require("path");
 const app = express();
 
 const { MongoClient } = require("mongodb");
@@ -27,8 +28,7 @@ if(process.env.NODE_ENV === "development"){
         publicPath: config.output.publicPath,
     }));
 }
-
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.get("/", function(req, res){
     res.sendFile(__dirname + '/app/index.html');
