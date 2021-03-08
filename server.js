@@ -61,7 +61,6 @@ app.get("/api/database", async function(req,res){
     finally{
         await mdbClient.close();
     }
-    res.sendFile(__dirname + '')
 });
 
 const listener = app.listen(port, function(){
